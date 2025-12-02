@@ -20,12 +20,17 @@ for start, end in ranges:
         ns = str(n)
         mid = len(ns) // 2
         for size in range(1, mid + 1):
-            parts = []
-            i = 0
+            part = ns[:size]
+            ok = True
+            i = size
             while i < len(ns):
-                parts.append(ns[i:i + size])
+                next_part = ns[i:i + size]
+                if part != next_part:
+                    ok = False
+                    break
                 i += size
-            if parts.count(parts[0]) == len(parts):
+
+            if ok:
                 result += n
                 break
 
