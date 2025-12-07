@@ -31,7 +31,7 @@ for i in range(len(splitters)):
     else:
         graph[s1].add((rows - 1, s1[1] - 1))
 
-print(len(splitters_involved) + 1)  # extra 1 for the first splitter
+print(len(splitters_involved) + 1)  # part 1, extra 1 for the first splitter
 
 
 def calc_paths(node, memo):
@@ -48,4 +48,4 @@ def calc_paths(node, memo):
     return total
 
 
-print(calc_paths(splitters[0], {}))
+print(calc_paths(splitters[0], {}))  # part 2
